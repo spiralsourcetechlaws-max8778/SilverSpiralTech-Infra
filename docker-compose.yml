@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  sliver:
+    build: .
+    container_name: sliver-server
+    restart: unless-stopped
+    ports:
+      - "31337:31337" # gRPC (for the Bridge)
+      - "8888:8888"   # mTLS/HTTP (for Agents to call back)
+    volumes:
+      - ./data:/root/.sliver
