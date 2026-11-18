@@ -1,11 +1,9 @@
 {
     "recommendations": [
-        "ms-python.python",
         "ms-azuretools.vscode-docker",
+        "ms-python.python",
         "redhat.vscode-yaml",
-        "bmewburn.vscode-intelephense-client",
         "eamodio.gitlens",
-        "github.copilot",
         "github.codespaces"
     ]
 }

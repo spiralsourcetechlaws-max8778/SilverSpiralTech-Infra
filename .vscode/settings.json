@@ -7,8 +7,7 @@
         "**/operator.cfg": true,
         "**/.env": true
     },
-    "editor.formatOnSave": true,
-    "editor.rulers": [80, 100],
+    "python.defaultInterpreterPath": "/root/SilverSpiralTech/env/bin/python",
     "yaml.schemas": {
         "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml"
     }
