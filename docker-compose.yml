@@ -5,7 +5,7 @@ services:
     container_name: sliver-server
     restart: unless-stopped
     ports:
-      - "31337:31337" # gRPC (for the Bridge)
-      - "8888:8888"   # mTLS/HTTP (for Agents to call back)
+      - "31337:31337"
+      - "8888:8888"
     volumes:
       - ./data:/root/.sliver

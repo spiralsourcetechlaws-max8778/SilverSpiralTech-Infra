@@ -8,7 +8,7 @@ load_dotenv()
 
 app = FastAPI(title="SilverSpiralTech Bridge")
 CONFIG_PATH = os.getenv("SLIVER_CONFIG", "/root/SilverSpiralTech/bridge/operator.cfg")
-BRIDGE_API_KEY = os.getenv("BRIDGE_API_KEY")
+BRIDGE_API_KEY = os.getenv("BRIDGE_API_KEY", "change_me_to_a_secure_key")
 
 client = None
 
@@ -25,13 +25,13 @@ def verify_key(x_api_key: str):
 async def startup_event():
     global client
     if not os.path.exists(CONFIG_PATH):
-        print(f"⚠️ WARNING: {CONFIG_PATH} not found. Awaiting operator.cfg from VPS.")
+        print(f"⚠️ WARNING: {CONFIG_PATH} not found.")
         return
     try:
         config = SliverClientConfig.parse_config_file(CONFIG_PATH)
         client = SliverClient(config)
         await client.connect()
-        print("✅ Connected to Remote Sliver Server via gRPC")
+        print("✅ Connected to Sliver gRPC successfully.")
     except Exception as e:
         print(f"❌ Failed to connect to Sliver: {e}")
 

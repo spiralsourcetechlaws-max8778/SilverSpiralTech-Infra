@@ -1,4 +1,4 @@
-# Sliver Infrastructure Exclusions
+# Secrets & Binaries
 operator.cfg
 .env
 data/
